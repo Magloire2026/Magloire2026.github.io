@@ -1,33 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Magloire | Portfolio Data</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magloire Dakeyo | Portfolio Data</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<h1>Magloire Dakeyo</h1>
-<p>Étudiant en sciences des données appliquées – Ottawa</p>
+  <header>
+    <h1>Magloire Dakeyo</h1>
+    <p>Étudiant en sciences des données appliquées – College la Cité-Ottawa, ON</p>
+    <p>
+      Intérêts : analyse de données, enjeux sociaux et environnementaux (qualité de l’eau, logement).
+    </p>
+    <p>
+      <a href="https://github.com/prince2026" target="_blank" rel="noopener">GitHub</a>
+      |
+      <a href="#projet">Voir le projet</a>
+      |
+      <a href="#contact">Contact</a>
+    </p>
+    <hr />
+  </header>
 
-<h2>Projet vedette</h2>
+  <main>
 
-<h3>Accessibilité au logement : Ontario vs Colombie-Britannique</h3>
+    <section id="apropos">
+      <h2>À propos</h2>
+      <p>
+        Je suis étudiant en 2e année en sciences des données appliquées (La Cité, Ottawa).
+        J’aime transformer des données publiques en analyses claires et utiles pour la prise de décision.
+      </p>
+      <p>
+        Compétences principales : collecte et nettoyage de données, analyse statistique, visualisation,
+        modélisation (régression), et communication des résultats.
+      </p>
+    </section>
 
-<p>
-Ce projet analyse l’accessibilité au logement à partir du ratio logement/revenu,
-en comparant deux provinces canadiennes aux marchés immobiliers tendus.
-</p>
+    <section id="competences">
+      <h2>Compétences</h2>
+      <ul>
+        <li><strong>Programmation / Data</strong> : Python, R, SQL</li>
+        <li><strong>Visualisation</strong> : Matplotlib, Seaborn, Excel</li>
+        <li><strong>Bases de données</strong> : MySQL, SQL Server</li>
+        <li><strong>Cloud / Outils</strong> : AWS (EC2), Power Query</li>
+        <li><strong>Soft skills</strong> : rigueur, gestion du temps, communication, travail d’équipe</li>
+        <li><strong>Langues</strong> : français & anglais</li>
+      </ul>
+    </section>
 
-<ul>
-  <li>Données : Recensement 2021 (Statistique Canada)</li>
-  <li>Méthodes : analyse exploratoire, régression linéaire multiple</li>
-  <li>Résultat clé : les ménages unipersonnels sont les plus vulnérables</li>
-</ul>
+    <section id="projet">
+      <h2>Projet vedette</h2>
+      <h3>Accessibilité au logement : Ontario vs Colombie-Britannique (2021)</h3>
 
-<p>
-<a href="https://github.com/Magloire2026/Accessibilite-Logement-ON-BC">
-Voir le projet sur GitHub
-</a>
-</p>
+      <p>
+        Objectif : comparer l’accessibilité au logement à partir du <strong>ratio logement / revenu</strong>
+        et identifier les types de ménages les plus vulnérables.
+      </p>
+
+      <ul>
+        <li><strong>Données</strong> : Recensement 2021 (Statistique Canada – microdonnées)</li>
+        <li><strong>Méthodes</strong> : nettoyage, analyse exploratoire, visualisations, régression linéaire multiple (log(ratio + 1))</li>
+        <li><strong>Résultats</strong> : les <strong>ménages unipersonnels</strong> présentent les charges les plus élevées ; l’Ontario est <strong>légèrement</strong> plus abordable que la C.-B. à caractéristiques comparables.</li>
+      </ul>
+
+      <p>
+        <strong>Pourquoi c’est important :</strong>
+        ce type d’analyse aide à mieux cibler les politiques d’aide au logement vers les ménages les plus exposés.
+      </p>
+
+      <p>
+        <a href="https://github.com/Magloire2026/Accessibilite-Logement-ON-BC" target="_blank" rel="noopener">
+          Voir le projet sur GitHub (README + analyse)
+        </a>
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>GitHub : <a href="https://github.com/magloire2026" target="_blank" rel="noopener">github.com/magloire2026</a></li>
+        <li>Email : <em>mdakeyo@peacemakers.ch</em></li>
+        
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <hr />
+    <p>© <span id="year"></span> Magloire Dakeyo — Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
 
