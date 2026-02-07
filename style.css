@@ -1,14 +1,13 @@
 :root{
   --bg:#ffffff;
-  --surface:#f7f9fc;
-  --surface2:#ffffff;
+  --surface:#f8fafc;
   --text:#0f172a;
   --muted:#475569;
   --border:#e5e7eb;
-  --accent:#2563eb;       /* bleu pro */
-  --accent-soft:#e8efff;
-  --shadow:0 8px 20px rgba(15,23,42,.08);
-  --max:960px;
+  --accent:#0a66c2;        /* LinkedIn-like blue */
+  --accent-soft:#e8f2ff;
+  --shadow:0 10px 22px rgba(15,23,42,.08);
+  --max:980px;
   --radius:14px;
 }
 
@@ -25,10 +24,44 @@ body{
 header, main, footer{
   max-width:var(--max);
   margin:0 auto;
-  padding:24px;
+  padding:22px;
 }
 
-header{ padding-top:40px; }
+/* Top nav (simple) */
+.nav{
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+  margin-left:14px;
+}
+.nav a:hover{ color:var(--accent); }
+
+.brand{
+  font-weight:800;
+  color:var(--text);
+  letter-spacing:-.01em;
+}
+
+header{ padding-top:30px; }
 
 hr{
   border:none;
@@ -42,13 +75,13 @@ h1{
   letter-spacing:-.02em;
 }
 
-header p{
+.subtitle{
   margin:6px 0;
   color:var(--muted);
 }
 
 h2{
-  margin:26px 0 10px;
+  margin:20px 0 10px;
   font-size:1.35rem;
   letter-spacing:-.01em;
 }
@@ -58,13 +91,21 @@ h3{
   font-size:1.05rem;
 }
 
+/* Cards */
 section{
-  background:linear-gradient(180deg,var(--surface),var(--surface2));
+  background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:18px;
   margin:14px 0;
   box-shadow:var(--shadow);
+}
+
+/* Two-column layout for skills/project (desktop) */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
 }
 
 ul{ margin:10px 0 0; padding-left:18px; }
@@ -89,10 +130,11 @@ a:hover{ border-bottom-color:var(--accent); }
   border-radius:999px;
   background:var(--accent-soft);
   color:var(--accent);
-  border:1px solid #dbe4ff;
+  border:1px solid #cfe3ff;
   font-size:.92rem;
 }
 
+/* Buttons */
 .actions{
   display:flex;
   flex-wrap:wrap;
@@ -106,6 +148,7 @@ a:hover{ border-bottom-color:var(--accent); }
   border:1px solid var(--border);
   background:#fff;
   color:var(--text);
+  font-weight:600;
 }
 .btn.primary{
   background:var(--accent);
@@ -114,14 +157,24 @@ a:hover{ border-bottom-color:var(--accent); }
 }
 .btn:hover{ filter:brightness(.98); }
 
+.small{
+  font-size:.95rem;
+  color:var(--muted);
+}
+
 footer{
   color:var(--muted);
   font-size:.95rem;
   padding-bottom:40px;
 }
 
+@media (max-width:850px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
 @media (max-width:600px){
   header, main, footer{ padding:16px; }
+  .nav-inner{ padding:10px 16px; }
   h1{ font-size:1.85rem; }
   section{ padding:14px; }
 }
